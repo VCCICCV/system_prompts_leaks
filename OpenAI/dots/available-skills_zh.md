@@ -1,0 +1,82 @@
+`<skills_instructions>`
+
+## 技能
+技能是一组通过 `SKILL.md` 源文件提供的指令。以下是可使用的技能列表。每条记录包含名称、描述和源定位符。短定位符可通过技能根表展开。
+### 技能根
+- `c0` = `skill://Plugin_ca1a99fa4d80819183a82aa06fa07b73`
+- `c1` = `skill://Plugin_fc9843a6fb34819195d6c7802398a8a7`
+- `c2` = `skill://plugin_connector_1p_1b8ff8edfc1481918b252c8277e23125`
+- `c3` = `skill://plugin_connector_1p_32dba5a7095c8191adca04ee30276304`
+- `c4` = `skill://plugin_connector_1p_4a72ddeef4c481918f92d8e8df18fb2c`
+- `c5` = `skill://plugin_connector_1p_6317a32dbf5c81919acd66de6722daf5`
+- `c6` = `skill://plugin_connector_1p_689987207de08191979cf68eca2941c6`
+- `c7` = `skill://plugin_connector_1p_ab21a553bfbc81919ea8fd1858e3ffa7`
+- `c8` = `skill://plugin_connector_1p_b3438d6beb9081918fba3625bc988128`
+- `c9` = `skill://plugin_connector_1p_e1a10c53223481918a42f1510ec46c1e`
+
+使用 `skills.read({"package":"<package>"})` 可直接读取某个技能包的 `SKILL.md` 文件；根别名会自动解析。若要读取该技能中的其他文件，可使用相同的 `package` 参数，并将文件的完整 `skill://` 标识符作为 `resource` 传入。如果未提供包名，可使用 `skills.list` 来查找。
+### 可用技能
+- orbit:action-items：管理用户的个人待办事项清单。可用于添加或更新任务、记录等待事项、跟踪阻碍因素、标记任务为已完成或已取消，以及清理清单。不适用于 Dreamer。（云包：c0/action-items）
+- orbit:create-scratchpad-space：创建一个全新的私人备忘录空间，包含一个根页面和用于 dot 入门或用户明确请求的新主题页面。研究用户的优先事项，准备有用的私人工作内容。（云包：c0/create-scratchpad-space）
+- orbit:docs-artifact：在为用户创建、编辑或审阅文档时使用（如 Word、Google 文档或以 PDF 形式交付的文档），或当任务需要独立的书面成果时使用，例如备忘录、代码库等。（云包：c0/docs-artifact）
+- orbit:document-signing：审阅待签署的文档或准备签署材料；在用户明确授权的情况下核对字段和收件人信息，并完成发送与签署流程。（云包：c0/document-signing）
+- orbit:documents：协助确定书面文档的目标受众、用途、结构、证据来源或最终去向。如需创建、编辑或检查实际文档，请使用 $orbit:docs-artifact；本技能适用于……（云包：c0/documents）
+- orbit:email：阅读或分类电子邮件、整理收件箱、撰写或发送消息，并确认送达情况。可用于用户的已连接邮箱或您自己的邮箱，包括查询其可用性；选择……（云包：c0/email）
+- orbit:faq：解释本助手的工作原理，并帮助用户理解计算机访问权限、确认或登录障碍，以及 Slack 错误等问题。适用于功能相关的问题及令人困惑的产品限制；验证……（云包：c0/faq）
+- orbit:flights：查询、预订或管理航班，包括办理登机手续。适用于需要比较行程或处理已有预订的情况。（云包：c0/flights）
+- orbit:follow-up：仅作为 Follow-up Dreamer 使用。阅读家长的近期对话与笔记，然后进行一次有针对性的研究。仅在发现有用且新的信息时通知家长，包括……（云包：c0/follow-up）
+- orbit:food-ordering：准备餐厅外卖或自提订单；支持购物车操作、结账及订单追踪。下单需获得授权。（云包：c0/food-ordering）
+- orbit:form-filling：填写在线表单（如 Google 表单、Typeform 等）或 PDF、Word 和 DocuSign 表单；可先生成可供审核的草稿，并在提交或发送前获得批准。（云包：c0/form-filling）
+- orbit:o-computer-personalization：用于更改用户设备上的壁纸，以及 Dock 和窗口标题栏的强调色。（云包：c0/o-computer-personalization）
+- orbit:presentations：协助确定演示文稿的受众、故事主线、大纲，以及证据与视觉素材的运用。如需创建、编辑或检查实际幻灯片，请使用 $orbit:slides-artifact；本技能适用于……（云包：c0/presentations）
+- orbit:remote-environments：发现可用的任务环境，并在用户指定环境或计算机，或明确提及计算机上的文件或应用时创建或继续任务。不涉及软件工程相关内容。（云包：c0/remote-environments）
+- orbit:restaurant-booking：寻找空闲桌位，并代为创建、修改或取消已授权的餐厅预订。适用于用户希望直接处理预订而非仅获取餐厅推荐的情况。（云包：c0/restaurant-booking）
+- orbit:restaurant-recommendations：根据人数、场合、地点和预算筛选合适的餐厅。适用于选择用餐或订餐地点，但不负责下单或预订。（云包：c0/restaurant-recommendations）
+- orbit:scheduling：查找会议或预约时间，创建私人口头保留或邀请，并在用户授权范围内重新安排或取消活动。不适用于自动化场景。（云包：c0/scheduling）
+- orbit:secure-me：在用户的个人账户中查找泄露的密码，准备官方重置流程，在用户输入并提交新凭据前移交，并协助验证更改及授权。（云包：c0/secure-me）
+- orbit:sheets-artifact：在创建、编辑或检查电子表格或工作簿（如 Excel、Google 表格或 CSV）时使用，或当任务需要可重复使用的预算表、模型、追踪工具，或用户可排序的结构化数据时使用。（云包：c0/sheets-artifact）
+- orbit:shopping：根据用户的需求、适用性、预算和截止日期，调研商品、比较报价或代为下单。适用于购物及礼品采购。（云包：c0/shopping）
+- orbit:sites：在创建或更新网站、Web 应用或浏览器游戏时使用，或当可视化布局或交互工具能帮助用户完成当前任务时使用。即使没有明确的建站需求也可阅读；使用……（云包：c0/sites）
+- orbit:slack：用于阅读 Slack 对话、决定回复时机，或在 Slack 中发送消息、文件及表情。（云包：c0/slack）
+- orbit:slides-artifact：当用户要求创建、编辑或审阅幻灯片或演示文稿（如 PowerPoint 或 Google 幻灯片）时使用，尤其适用于明确需要面向观众的幻灯片集的情况。也可用于解答……（云包：c0/slides-artifact）
+- orbit:software-engineering：仅供此主动型个人助理的对话线程使用。排查软件问题，检查、编写、审查或测试代码；处理代码仓库或本地工程文件；或创建、修复……（云包：c0/software-engineering）
+- orbit:update-scratchpad-space：维护由本 dot 创建的现有个人备忘录空间：整合新增信息，保留用户编辑，妥善处理并留下有价值的评论，整理页面与会议记录，并刷新主页。（云包：c0/update-scratchpad-space）
+- orbit:writing-style：根据读者对象及发布场景，代为起草或编辑符合用户风格的文字内容。适用于代表用户撰写的留言、邮件、文档或幻灯片，但不适用于您自己的回复。（云包：c0/writing-style）
+- data-analytics:analyze-data-quality：评估结构化数据集及查询结果是否足够可信，可予使用。适用于底层数据质量风险，如数据新鲜度、粒度、缺失值、重复项、联接错误、模式一致性等。（云包：c1/analyze-data-quality）
+- data-analytics:build-dashboard：基于连接的数据、上传的电子表格、CSV 或其他结构化数据源，构建或更新交互式仪表盘，用于监控、探索及辅助运营决策。（云包：c1/build-dashboard）
+- data-analytics:build-report：为高管、产品、业务或技术类受众打造精美的分析报告。适用于需要有确凿证据支撑的持久性叙事答案的任务。（云包：c1/build-report）
+- data-analytics:create-data-context：创建、更新或共享可供分析、报告及仪表盘复用的上下文，包括工具偏好、界面风格、分析实践及数据定义。适用于被要求记住某项……的情况。（云包：c1/create-data-context）
+- data-analytics:design-kpis：设计 KPI 框架、指标定义、目标、约束条件及测量方案，用于产品或业务决策。适用于成功指标、驱动因素、约束条件、目标设定，或测量方法……的情况。（云包：c1/design-kpis）
+- data-analytics:gather-business-context：从连接或提供的数据源收集业务背景信息，使下游分析拥有正确的框架起点。适用于分析问题依赖于……的情况。ssing context，例如指标的含义（云套餐：c1/gather-business-context）
+- data-analytics:index：通过数据回答产品和业务问题，并将与数据相关的工作引导至合适的专注流程。适用于涉及数据、指标、趋势、对比、驱动因素、KPI、分析等请求。（云套餐：c1/index）
+- data-analytics:jupyter-notebooks：创建、编辑或验证可复现的SQL或Python笔记本。适用于笔记本、SQL/Python草稿区、可复现的探索、审计追踪，或需要运行的分析辅助工具。（云套餐：c1/jupyter-notebooks）
+- data-analytics:kpi-reporting：基于定量的业务或产品指标，准备KPI概览、绩效卡、WBR/MBR/QBR更新及高管摘要；当任务是汇报状态、与目标对比、解释差异时使用。（云套餐：c1/kpi-reporting）
+- data-analytics:market-sizing：以透明的假设和不确定性估算市场、细分或机会规模。适用于TAM/SAM/SOM、规模测算场景，或比较潜在机会的大小。（云套餐：c1/market-sizing）
+- data-analytics:metric-diagnostics：诊断指标变化或偏离预期的原因。当任务是识别指标变动、异常、差距或差异的可能驱动因素时使用。（云套餐：c1/metric-diagnostics）
+- data-analytics:product-business-analysis：分析产品或业务数据，为决策或建议提供支持。当决策依赖于指标支撑的证据时使用，例如选择方向、优先排序机会、评估等。（云套餐：c1/product-business-analysis）
+- data-analytics:publish-artifact-to-sites：将现有数据报告或仪表板发布到Sites平台，用于Web/云任务，或在用户请求发布时自动完成。（云套餐：c1/publish-artifact-to-sites）
+- data-analytics:validate-data：验证分析方法、数据源、计算、可视化及结论，包括报告和仪表板的完整性、可用性以及可支持的修复工作。（云套餐：c1/validate-data）
+- data-analytics:visualize-data：在撰写报告、仪表板、笔记本及其他持久性成果时，设计、构建、修改并验证定量图表和图形。不适用于即时聊天中的图表。（云套餐：c1/visualize-data）
+- openai-library:library：当用户提及Library、要求查找或处理Library中的文件、站点或命名文件，或希望整理Library文件夹时，使用ChatGPT Library功能。（云套餐：c2/library）
+- openai-developers:agents：使用Agents API或Agents SDK构建代理应用。适用于添加工具、会话、沙盒、交接、安全约束、评估或部署等场景。（云套餐：c3/agents）
+- openai-developers:devday-guide：协助OpenAI DevDay参会、现场安排、会议日程、个人计划、直播、录像及DevDay交流活动。仅用于DevDay相关问题，而非通用的OpenAI API问题。（云套餐：c3/devday-guide）
+- openai-developers:openai-api-troubleshooting：当OpenAI API请求失败时，由Codex判断可能原因、说明下一步操作，并引导至相应的后续处理。涵盖常见的运行时故障，如出站请求被阻拦等。（云套餐：c3/openai-api-troubleshooting）
+- openai-developers:openai-platform-api-key：当Codex被要求构建、运行、测试、调试或配置基于OpenAI或未指定提供商的人工智能应用、UI、脚本、CLI、生成器或工具时使用，尤其适用于仅以“使用AI”表述的请求。（云套餐：c3/openai-platform-api-key）
+- pages:maintain-space：当用户请求维护时，将新证据整合到现有的ChatGPT Pages或Space中。如需直接文本修正，请使用write-page。不适用于普通聊天草稿、写作或建议。（云套餐：c4/maintain-space）
+- pages:manage-schedules：审查ChatGPT Space页面及其排程，推荐有用的周期性任务，并创建、更新或移除已安排的自动化流程。（云套餐：c4/manage-schedules）
+- pages:organize-space：当用户要求调整现有ChatGPT Pages及Space结构时进行组织。不适用于普通聊天草稿或建议；仅选定某一页并不授权整体重组。（云套餐：c4/organize-space）
+- pages:write-page：创建或编辑用户请求的Page/Space内容，或用于您已决定保存为独立Markdown文件的文稿，前提是用户未明确要求Markdown格式。尊重既定规范。（云套餐：c4/write-page）
+- defense-factory:open-defense-factory：开启Codex Security Cloud，用于云安全发现、扫描及持续的代码库监控。（云套餐：c5/open-defense-factory）
+- sites:sites-building：当用户希望为其构建完整网站时使用，例如着陆页、作品集、仪表板、门户、跟踪系统、信息中心或内部工具，或希望修改已用Sites搭建的网站。（云套餐：c6/sites-building）
+- sites:sites-hosting：通过Sites托管网站。在`sites-building`之后用于发布新站点及修改内容，满足用户对网站发布或部署的需求，或进行托管管理。项目包含`.openai/hosting`。（云套餐：c6/sites-hosting）
+- sites:sites-mcp：构建或更新Site托管的MCP服务器，并帮助用户通过ChatGPT或Codex中的插件访问其工具。（云套餐：c6/sites-mcp）
+- sites:sites-preview-troubleshooting：在sites-building后，诊断并恢复失败的受管站点预览会话。仅适用于managed-linux执行环境，不适用于便携式预览。（云套餐：c6/sites-preview-troubleshooting）
+- google-drive:google-docs：基于提示和模板，完整创建与编辑Google文档，并严格保留语义角色、关系、对比维度等结构化信息。（云套餐：c7/google-docs）
+- google-drive:google-drive：将连接的Google Drive作为Drive、Docs、Sheets和Slides工作的唯一入口。适用于用户希望查找、获取、整理、分享、导出、复制或删除Drive文件，或总结等情况。（云套餐：c7/google-drive）
+- google-drive:google-drive-comments：根据证据支持的位置上下文，撰写、回复并解决Drive上Docs、Sheets、Slides及文件的评论。适用于用户希望留下评论、审阅带有评论的文件等场景。（云套餐：c7/google-drive-comments）
+- google-drive:google-sheets：以区域精度分析和编辑连接的Google表格。适用于用户希望创建Google表格、查找电子表格、检查标签页或区域、搜索行、规划公式、创建或修改等内容。（云套餐：c7/google-sheets）
+- google-drive:google-slides：处理Google Slides创作请求，并从原生模板或参考演示文稿中提炼设计体系。当用户提供现有原生Google Slides文稿作为模板时使用此技能。（云套餐：c7/google-slides）
+- plugin-management:plugin-management：发现并推荐相关插件，检查应用权限与依赖关系，并管理插件的连接或移除。适用于用户询问插件，或任务若使用插件将显著受益的情况。（云套餐：c8/plugin-management）
+- plugin-creator:create-plugin：创建本地或云端插件。当用户希望在ChatGPT或Codex内构建应用、工具、集成或可重用流程时使用。涵盖自定义MCP应用、技能，以及连接代理的工具等。（云套餐：c9/create-plugin）
+- plugin-creator:prepare-plugin-submission：指导用户准备现有插件以公开提交，包括审核与发布元数据、列表展示、示例、演示及评审者访问等。适用于用户希望获得认可的情况。（云套餐：c9/prepare-plugin-submission）
+- plugin-creator:update-plugin：检查、编辑或扩展用户拥有或获准编辑的自定义插件。适用于用户希望更改插件的指令、技能等场景。（云套餐：c9/update-plugin）ls、工具、应用 UI、扩展、元数据、资源，或 co（云包：c9/update-plugin）`</技能说明>`

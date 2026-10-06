@@ -1,0 +1,1 @@
+`## 待办任务与下一步` 部分也必须包含且仅包含一行，格式如下：`- 剩余工作清单: {"total_targets":N,"completed_targets":N,"remaining_targets":N,"remaining_target_ids":["ID"]}`。请严格按照这四个 JSON 键使用。各项计数必须为非负整数，`total_targets` 必须等于 `completed_targets` 加上 `remaining_targets`，ID 必须是唯一且非空的字符串，且 ID 的数量必须等于 `remaining_targets`。
